@@ -4,46 +4,21 @@ require_once "lib/EasyRdf.php";
 EasyRdf_Namespace::set('wd', 'http://www.wikidata.org/entity/');
 EasyRdf_Namespace::set('wdt', 'http://www.wikidata.org/prop/direct/');
 EasyRdf_Namespace::set('wikibase', 'http://wikiba.se/ontology#');
-EasyRdf_Namespace::set('p', 'http://www.wikidata.org/prop/');
-EasyRdf_Namespace::set('ps', 'http://www.wikidata.org/prop/statement/');
-EasyRdf_Namespace::set('pq', 'http://www.wikidata.org/prop/qualifier/');
-EasyRdf_Namespace::set('bd', 'http://www.bigdata.com/rdf#');
-EasyRdf_Namespace::set('owl', 'http://www.w3.org/2002/07/owl#');
-EasyRdf_Namespace::set('rdfs', 'http://www.w3.org/2000/01/rdf-schema#');
-EasyRdf_Namespace::set('foaf', 'http://xmlns.com/foaf/0.1/');
-EasyRdf_Namespace::set('dct', 'http://purl.org/dc/terms/');
-EasyRdf_Namespace::set('dbpedia-owl', 'http://dbpedia.org/ontology/');
 
-EasyRdf_Namespace::set('rdf', 'http://www.w3.org/1999/02/22-rdf-syntax-ns#');
-EasyRdf_Namespace::set('dbo', 'http://dbpedia.org/ontology/');
-EasyRdf_Namespace::set('geo', 'http://www.w3.org/2003/01/geo/wgs84_pos#');
-EasyRdf_Namespace::set('dbr', 'http://dbpedia.org/resource/');
-$sparql = new EasyRdf_Sparql_Client('http://linkeddata.uriburner.com/sparql/');
+
+$sparql = new EasyRdf_Sparql_Client('https://query.wikidata.org/');
 
 $semuaUniv = $sparql->query('
-SELECT DISTINCT ?id ?namaKota ?foto ?namaUniv
-{ 
-SERVICE <http://query.wikidata.org/sparql> 
-{ SELECT * WHERE{
+SELECT DISTINCT ?item ?kotaLabel ?foto ?itemLabel
+ WHERE{
   		?item wdt:P31 wd:Q3918.
-  		?item wdt:P17 wd:Q252.
-  		?item wdt:P856 ?link.
-  		SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". } 
-  	}
+		  ?item wdt:P17 wd:Q252.
+                ?item wdt:P131 ?kota.
+		  OPTIONAL {
+			?item wdt:P154 ?foto .
 }
-SERVICE <http://dbpedia.org/sparql>
-{ SELECT  *
-  WHERE
-  { ?name dbpedia-owl:wikiPageExternalLink ?link .
-
-    ?name dbo:wikiPageID ?id .
-    ?name rdfs:label ?namaUniv .
-OPTIONAL {
-    ?name dbo:thumbnail ?foto .
-    ?name dbo:city  ?kota .
-    ?kota foaf:name ?namaKota
-} filter langMatches(lang(?namaUniv),"en")
-} } }
+  		SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],id". } 
+  	}
 ');
 ?>
 <!DOCTYPE html>
@@ -186,16 +161,16 @@ OPTIONAL {
 					<div class="col-lg-3 col-md-6">
 						<div class="single-product" data-aos="fade-up"
 						data-aos-duration="1000">
-				      <?php if(isset($data->foto)): ?>
+				      <?php if(!empty($data->foto)): ?>
 							<img class="img-fluid m-auto" src="<?=$data->foto?>" alt="">
 					<?php else: ?>
 						<img class="img-fluid m-auto" src="img/product/default.png" alt="" >
 					<?php endif ?>
 							<div class="product-details px-3">
-								<h6><?=$data->namaUniv?></h6>
+								<h6><?=$data->itemLabel?></h6>
 								<div class="price">
-								<?php if(isset($data->namaKota)): ?>
-									<h6><?=$data->namaKota?></h6>
+								<?php if(!empty($data->kotaLabel)): ?>
+									<h6><?=$data->kotaLabel?></h6>
 								<?php endif ?>
 									<!-- <h6 class="l-through">$210.00</h6> -->
 								</div>

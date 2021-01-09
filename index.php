@@ -31,7 +31,10 @@ SELECT DISTINCT ?id ?namaKota ?foto ?namaUniv
 SERVICE <http://query.wikidata.org/sparql> 
 { SELECT * WHERE{
   		?item wdt:P31 wd:Q3918.
-  		?item wdt:P17 wd:Q252.
+		  ?item wdt:P17 wd:Q252.
+		  OPTIONAL {
+			?item wdt:P154 ?foto .
+}
   		?item wdt:P856 ?link.
   		SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". } 
   	}
@@ -56,7 +59,10 @@ SELECT DISTINCT ?id ?namaKota ?foto ?namaUniv
 SERVICE <http://query.wikidata.org/sparql> 
 { SELECT * WHERE{
   		?item wdt:P31 wd:Q3918.
-  		?item wdt:P17 wd:Q252.
+		  ?item wdt:P17 wd:Q252.
+		  OPTIONAL {
+			?item wdt:P154 ?foto .
+}
   		?item wdt:P856 ?link.
   		SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". } 
   	}
@@ -295,7 +301,7 @@ endforeach;
 					<div class="col-lg-3 col-md-6">
 						<div class="single-product" data-aos="fade-up"
 						data-aos-duration="1000">
-				      <?php if(isset($data->foto)): ?>
+				      <?php if(!empty($data->foto)): ?>
 							<img class="img-fluid m-auto" src="<?=$data->foto?>" alt="">
 					<?php else: ?>
 						<img class="img-fluid m-auto" src="img/product/default.png" alt="" >
@@ -303,7 +309,7 @@ endforeach;
 							<div class="product-details px-3">
 								<h6><?=$data->namaUniv?></h6>
 								<div class="price">
-								<?php if(isset($data->namaKota)): ?>
+								<?php if(!empty($data->namaKota)): ?>
 									<h6><?=$data->namaKota?></h6>
 								<?php endif ?>
 									<!-- <h6 class="l-through">$210.00</h6> -->
@@ -339,7 +345,7 @@ endforeach;
 					<div class="col-lg-3 col-md-6">
 						<div class="single-product" data-aos="fade-up"
 						data-aos-duration="1000">
-				      <?php if(isset($data->foto)): ?>
+				      <?php if(!empty($data->foto)): ?>
 							<img class="img-fluid m-auto" src="<?=$data->foto?>" alt="">
 					<?php else: ?>
 						<img class="img-fluid m-auto" src="img/product/default.png" alt="" >
@@ -347,7 +353,7 @@ endforeach;
 							<div class="product-details px-3">
 								<h6><?=$data->namaUniv?></h6>
 								<div class="price">
-								<?php if(isset($data->namaKota)): ?>
+								<?php if(!empty($data->namaKota)): ?>
 									<h6><?=$data->namaKota?></h6>
 								<?php endif ?>
 									<!-- <h6 class="l-through">$210.00</h6> -->
