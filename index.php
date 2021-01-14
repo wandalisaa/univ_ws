@@ -19,14 +19,14 @@ EasyRdf_Namespace::set('dbo', 'http://dbpedia.org/ontology/');
 EasyRdf_Namespace::set('geo', 'http://www.w3.org/2003/01/geo/wgs84_pos#');
 EasyRdf_Namespace::set('dbr', 'http://dbpedia.org/resource/');
 $sparql = new EasyRdf_Sparql_Client('http://linkeddata.uriburner.com/sparql/');
-
+$wiki = new EasyRdf_Sparql_Client('https://query.wikidata.org/sparql');
 $result1 = $sparql->query('
 SELECT DISTINCT * WHERE {
   ?negara rdf:type yago:WikicatMemberStatesOfTheUnitedNations.
 } ORDER BY ASC(?negara)
 ');
 $public = $sparql->query('
-SELECT DISTINCT ?id ?namaKota ?foto ?namaUniv
+SELECT DISTINCT ?item ?id ?namaKota ?foto ?namaUniv ?link
 { 
 SERVICE <http://query.wikidata.org/sparql> 
 { SELECT * WHERE{
@@ -54,7 +54,7 @@ OPTIONAL {
 } } } LIMIT 8
 ');
 $private = $sparql->query('
-SELECT DISTINCT ?id ?namaKota ?foto ?namaUniv
+SELECT DISTINCT ?item ?id ?namaKota ?foto ?namaUniv ?link
 { 
 SERVICE <http://query.wikidata.org/sparql> 
 { SELECT * WHERE{
@@ -82,22 +82,24 @@ OPTIONAL {
 } } } LIMIT 8
 ');
 $result3 = $sparql->query('
-SELECT DISTINCT ?namaUniv ?lokasi
+SELECT DISTINCT ?item ?itemLabel ?lokasi ?link
 { 
 SERVICE <http://query.wikidata.org/sparql> 
-{ SELECT * WHERE{
+{ SELECT ?item ?itemLabel ?lokasi ?link WHERE{
 	  ?item wdt:P31 wd:Q3918.
 	  ?item wdt:P17 wd:Q252.
 	  ?item wdt:P625 ?lokasi.
 	  ?item wdt:P856 ?link.
-	  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". } 
+	  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". bd:serviceParam wikibase:language "[AUTO_LANGUAGE],id". } 
 	}
 }
 SERVICE <http://dbpedia.org/sparql>
 { SELECT  *
   WHERE
-  { ?name dbpedia-owl:wikiPageExternalLink ?link .
-    ?name foaf:name ?namaUniv .
+  { 
+      OPTIONAL{
+     ?name dbpedia-owl:wikiPageExternalLink ?link .
+     }
 } } }
 ');
 
@@ -315,7 +317,7 @@ endforeach;
 									<!-- <h6 class="l-through">$210.00</h6> -->
 								</div>
 								<div class="prd-bottom">
-									<a href="" class="social-info">
+									<a href="single-product.php?id=<?php echo $data->item; ?>" class="social-info">
 										<span class="lnr lnr-eye"></span>
 										<p class="hover-text">view more</p>
 									</a>
@@ -359,7 +361,7 @@ endforeach;
 									<!-- <h6 class="l-through">$210.00</h6> -->
 								</div>
 								<div class="prd-bottom">
-									<a href="" class="social-info">
+									<a href="single-product.php?id=<?php echo $data->item; ?>" class="social-info">
 										<span class="lnr lnr-eye"></span>
 										<p class="hover-text">view more</p>
 									</a>
@@ -500,7 +502,11 @@ $array6 = array(
 ?>
 
 var marker = L.marker([<?php echo $array6["lat"]; ?>, <?php echo $array6["long"]; ?>]).addTo(map);
-marker.bindPopup("<b>test</b><br>").openPopup();
+<?php if (isset($key2->namaUniv)) { ?>
+	marker.bindPopup('<b><?php echo $key2->namaUniv; ?></b><br>').openPopup();
+<?php } else { ?>
+	marker.bindPopup('<b><?php echo $key2->itemLabel; ?></b><br>').openPopup();
+<?php } ?>
 <?php endforeach; ?>
 
 </script>

@@ -6,18 +6,19 @@ EasyRdf_Namespace::set('wdt', 'http://www.wikidata.org/prop/direct/');
 EasyRdf_Namespace::set('wikibase', 'http://wikiba.se/ontology#');
 
 
-$sparql = new EasyRdf_Sparql_Client('https://query.wikidata.org/');
+$sparql = new EasyRdf_Sparql_Client('https://query.wikidata.org/sparql');
 
 $semuaUniv = $sparql->query('
-SELECT DISTINCT ?item ?kotaLabel ?foto ?itemLabel
+SELECT DISTINCT ?item ?kotaLabel ?foto ?itemLabel ?link
  WHERE{
   		?item wdt:P31 wd:Q3918.
 		  ?item wdt:P17 wd:Q252.
-                ?item wdt:P131 ?kota.
+				?item wdt:P131 ?kota.
+				?item wdt:P856 ?link.
 		  OPTIONAL {
 			?item wdt:P154 ?foto .
 }
-  		SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],id". } 
+  		SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],id". bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". } 
   	}
 ');
 ?>
@@ -120,7 +121,7 @@ SELECT DISTINCT ?item ?kotaLabel ?foto ?itemLabel
 	<div class="container my-3">
 		<div class="row">
 			<div class="btn-toolbar">
-			  <div class="btn-group btn-group-sm">
+			  <!-- <div class="btn-group btn-group-sm">
 				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="100">A</button>
 				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="200">B</button>
 				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="300">C</button>
@@ -147,7 +148,7 @@ SELECT DISTINCT ?item ?kotaLabel ?foto ?itemLabel
 				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="2400">X</button>
 				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="2500">Y</button>
 				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="2600">Z</button>
-			  </div>
+			  </div> -->
 			</div>
 		  </div>
 		<div class="row">
@@ -170,12 +171,12 @@ SELECT DISTINCT ?item ?kotaLabel ?foto ?itemLabel
 								<h6><?=$data->itemLabel?></h6>
 								<div class="price">
 								<?php if(!empty($data->kotaLabel)): ?>
-									<h6><?=$data->kotaLabel?></h6>
+									<h4><?=$data->kotaLabel?></h4>
 								<?php endif ?>
 									<!-- <h6 class="l-through">$210.00</h6> -->
 								</div>
 								<div class="prd-bottom">
-									<a href="" class="social-info">
+									<a href="single-product.php?id=<?php echo $data->item; ?>" class="social-info">
 										<span class="lnr lnr-eye"></span>
 										<p class="hover-text">view more</p>
 									</a>

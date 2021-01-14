@@ -1,6 +1,94 @@
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
+<?php
+require_once "lib/EasyRdf.php";
 
+EasyRdf_Namespace::set('wd', 'http://www.wikidata.org/entity/');
+EasyRdf_Namespace::set('wdt', 'http://www.wikidata.org/prop/direct/');
+EasyRdf_Namespace::set('wikibase', 'http://wikiba.se/ontology#');
+EasyRdf_Namespace::set('p', 'http://www.wikidata.org/prop/');
+EasyRdf_Namespace::set('ps', 'http://www.wikidata.org/prop/statement/');
+EasyRdf_Namespace::set('pq', 'http://www.wikidata.org/prop/qualifier/');
+EasyRdf_Namespace::set('bd', 'http://www.bigdata.com/rdf#');
+EasyRdf_Namespace::set('owl', 'http://www.w3.org/2002/07/owl#');
+EasyRdf_Namespace::set('rdfs', 'http://www.w3.org/2000/01/rdf-schema#');
+EasyRdf_Namespace::set('foaf', 'http://xmlns.com/foaf/0.1/');
+EasyRdf_Namespace::set('dct', 'http://purl.org/dc/terms/');
+EasyRdf_Namespace::set('dbpedia-owl', 'http://dbpedia.org/ontology/');
+
+EasyRdf_Namespace::set('rdf', 'http://www.w3.org/1999/02/22-rdf-syntax-ns#');
+EasyRdf_Namespace::set('dbo', 'http://dbpedia.org/ontology/');
+EasyRdf_Namespace::set('dbp', 'http://dbpedia.org/property/');
+EasyRdf_Namespace::set('geo', 'http://www.w3.org/2003/01/geo/wgs84_pos#');
+
+$sparql = new EasyRdf_Sparql_Client('http://linkeddata.uriburner.com/sparql/');
+$id = $_GET['id'];
+$result = $sparql->query('
+
+SELECT DISTINCT ?itemLabel ?lokasi  ?link ?tipe ?kotaLabel ?foto ?fb ?berdiri ?rektor ?desk ?comen
+{ 
+SERVICE <http://query.wikidata.org/sparql> 
+{ SELECT ?item ?itemLabel ?lokasi ?link ?foto ?kotaLabel ?fb ?berdiri WHERE{
+	  ?item wdt:P31 wd:Q3918.
+	  ?item wdt:P17 wd:Q252.
+	  ?item wdt:P131 ?kota.
+      OPTIONAL{
+      ?item wdt:P154 ?foto.
+	  }
+      OPTIONAL{
+      ?item wdt:P571 ?berdiri.
+	  }
+	  OPTIONAL{
+		?item wdt:P2013 ?fb.
+		}
+	  ?item wdt:P625 ?lokasi.
+	  ?item wdt:P856 ?link.
+      FILTER(?item = <'.$id.'>)
+	  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". bd:serviceParam wikibase:language "[AUTO_LANGUAGE],id". } 
+	}
+}
+SERVICE <http://dbpedia.org/sparql>
+{ SELECT  *
+  WHERE
+  { 
+      OPTIONAL{
+     ?name dbpedia-owl:wikiPageExternalLink ?link .
+        OPTIONAL{?name dbo:type ?type .
+          ?type rdfs:label ?tipe.}
+        OPTIONAL{?name dbo:abstract ?desk.}
+        OPTIONAL{?name rdfs:comment ?comen.}
+        OPTIONAL{?name dbp:rector ?rektor.}
+      }
+      filter langMatches(lang(?tipe),"en")
+      filter langMatches(lang(?desk),"en")
+      filter langMatches(lang(?comen),"en")
+} } } LIMIT 1
+
+');
+foreach ($result as $key2):
+	$array2 = array('lokasi'=>str_replace('POINT', '', ucwords($key2->lokasi)));
+	$array3 = array('lokasi' =>str_replace(')', '', ucwords($array2["lokasi"])));
+	$array4 = array('lokasi' =>str_replace('(', '', ucwords($array3["lokasi"])));
+	$array5 = array('lokasi' =>str_replace(' -', ' ', ucwords($array4["lokasi"])));
+	$pattern = '/(\d+) (\d+).(\d+)/i'; 
+	$replacement = '$1 '; 
+	$pattern1 = '/(\d+).(\d+) /i';
+	$replacement1 = '';
+	  
+	// print output of function 
+	$array6 = array(
+	  'long' => preg_replace($pattern, $replacement, $array5["lokasi"]),
+	  'lat' => preg_replace($pattern1, $replacement1, $array4["lokasi"])
+	);
+	// echo preg_replace($pattern, $replacement, $array5["lokasi"]).'<br>'; 
+	// echo preg_replace($pattern1, $replacement1, $array4["lokasi"]).'<br>'; 
+	// $array6 = $array5["lokasi"];
+	// list($a, $b) = $array6;
+	// $array6 = array('lokasi' =>str_replace('(', '', ucwords($array4["lokasi"])));
+	// echo "Lat: $b Long: $a <br>";
+	// echo $array5["lokasi"].'<br>';
+	endforeach;
+?>
 <head>
 	<!-- Mobile Specific Meta -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -31,6 +119,16 @@
 	<link rel="stylesheet" href="css/magnific-popup.css">
 	<link rel="stylesheet" href="css/main.css">
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+   integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+   crossorigin=""></script>
+   <style media="screen">
+  #mapid { height: 400px;     z-index: 1;}
+  </style>
 </head>
 
 <body>
@@ -93,7 +191,11 @@
 		</div>
 	</section>
 	<!-- End Banner Area -->
-
+<?php foreach($result as $data): 
+	 if (isset($data->berdiri)) {
+	$array = array('berdiri'=>str_replace('T00:00:00Z', '', ucwords($data->berdiri)));
+	 }
+	?>
 	<!--================Single Product Area =================-->
 	<div class="product_image_area">
 		<div class="container">
@@ -101,7 +203,11 @@
 				<div class="col-lg-6">
 					<div class="s_Product_carousel">
 						<div class="single-prd-item">
+						<?php if (isset($data->foto)) { ?>
+							<img class="img-fluid" src="<?=$data->foto?>" alt="">
+						<?php } else { ?>
 							<img class="img-fluid" src="img/product/default.png" alt="">
+						<?php } ?>
 						</div>
 						<div class="single-prd-item">
 							<img class="img-fluid" src="img/product/default.png" alt="">
@@ -110,13 +216,26 @@
 				</div>
 				<div class="col-lg-5 offset-lg-1" id="detail" data-aos="fade-down" data-aos-duration="2000">
 					<div class="s_product_text">
-						<h3>UNIVERSITY OF NORTH SUMATRA</h3>
-						<h2>Public University</h2>
+						<h3><?=$data->itemLabel?></h3>
+						<?php if (isset($data->tipe)) { ?>
+							<h2><?=$data->tipe?></h2>
+						<?php } ?>
+						
 						<ul class="list">
-							<li><a class="active" href="#"><span>City</span> : Medan</a></li>
+							<li><a class="active" href="#">
+							<?php if (isset($data->kotaLabel)) { ?>
+								<span>City</span> : <?=$data->kotaLabel?>
+							<?php } ?>
+							<span>City</span> : -
+							</a></li>
 							<li><a href="#"><span>Country</span> : Indonesia</a></li>
 						</ul>
-						<p>The University of Sumatera Utara (Indonesian: Universitas Sumatera Utara) or (USU) is a public university located in the city of Medan in North Sumatera, Indonesia. It is situated in Padang Bulan, in the Medan Baru subdistrict of Medan, close to the City Centre, with a total area of 122 hectares. Due to an increase in student numbers, a new campus is being constructed in Kwala Bekala, 15 km distant, with a 300 hectare campus area. Its rectors serve eight-year renewable terms..</p>
+						<?php if (isset($data->comen)) { ?>
+							<p><?=$data->comen?></p>
+						<?php } else {?>
+						<p>Description Not Found</p>
+						<?php } ?>
+						
 					</div>
 				</div>
 			</div>
@@ -138,7 +257,11 @@
 			</ul>
 			<div class="tab-content" id="myTabContent">
 				<div class="tab-pane fade  show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-					<p>The University of Sumatera Utara (Indonesian: Universitas Sumatera Utara) or (USU) is a public university located in the city of Medan in North Sumatera, Indonesia. It is situated in Padang Bulan, in the Medan Baru subdistrict of Medan, close to the City Centre, with a total area of 122 hectares. Due to an increase in student numbers, a new campus is being constructed in Kwala Bekala, 15 km distant, with a 300 hectare campus area. Its rectors serve eight-year renewable terms. USU was established as a Foundation Universitet North Sumatera on June 4, 1952. The first is the Faculty of Medicine Faculty which was established on August 20, 1952, now commemorated as the anniversary USU. President of Indonesia, Sukarno then USU inaugurated as the seventh state university in Indonesia on November 20, 1957.</p>
+				<?php if (isset($data->desk)) { ?>
+							<p><?=$data->desk?></p>
+						<?php } else {?>
+						<p>Description Not Found</p>
+						<?php } ?>
 				</div>
 				<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 					<div class="table-responsive">
@@ -149,7 +272,11 @@
 										<h5>Founding Date</h5>
 									</td>
 									<td>
-										<h5>4 Juni 1952</h5>
+									<?php if (isset($data->berdiri)) { ?>
+											<h5><?=$array['berdiri'];?></h5>
+										<?php } else {?>
+										<p>Not Found</p>
+										<?php } ?>
 									</td>
 								</tr>
 								<tr>
@@ -157,7 +284,11 @@
 										<h5>Rector </h5>
 									</td>
 									<td>
-										<h5>Prof. Dr. dr. Syahril Pasaribu, DTM&H, M.Sc. , Sp.A</h5>
+									<?php if (isset($data->rektor)) { ?>
+											<h5><?=$data->rektor?></h5>
+										<?php } else {?>
+										<p>Not Found</p>
+										<?php } ?>
 									</td>
 								</tr>
 								<tr>
@@ -181,7 +312,7 @@
 										<h5>Official Website</h5>
 									</td>
 									<td>
-										<h5><a href=" http://www.usu.ac.id"> http://www.usu.ac.id</a></h5>
+										<h5><a href="<?=$data->link?>"><?=$data->link?></a></h5>
 									</td>
 								</tr>
 								<tr>
@@ -189,29 +320,34 @@
 										<h5>Facebook Id</h5>
 									</td>
 									<td>
-										<h5>usuofficial</h5>
+									<?php if (isset($data->fb)) { ?>
+											<h5><?=$data->fb?></h5>
+										<?php } else {?>
+										<p>Not Found</p>
+										<?php } ?>
 									</td>
 								</tr>
-								<tr>
+								<!-- <tr>
 									<td>
 										<h5>Motto</h5>
 									</td>
 									<td>
 										<h5>Toward Excellence as University for Industry</h5>
 									</td>
-								</tr>
+								</tr> -->
 							</tbody>
 						</table>
 					</div>
 				</div>
 			</div>
-			<div  id="mapBox" class="mapBox" data-lat="40.701083" data-lon="-74.1522848" data-zoom="13" data-info="PO Box CT16122 Collins Street West, Victoria 8007, Australia."
+			<!-- <div  id="mapBox" class="mapBox" data-lat="40.701083" data-lon="-74.1522848" data-zoom="13" data-info="PO Box CT16122 Collins Street West, Victoria 8007, Australia."
 			data-mlat="40.701083" data-mlon="-74.1522848">
-		   </div>
+		   </div> -->
+		   <div id="mapid" class="map map-home"></div>
 		</div>
 	</section>
 	<!--================End Product Description Area =================-->
-	
+	<?php endforeach ?>
 	<!-- start footer Area -->
 	<footer class="footer-area section_gap">
 		<div class="container">
@@ -255,10 +391,49 @@
 	<script src="js/gmaps.min.js"></script>
 	<script src="js/main.js"></script>
 	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 	<script>
 		AOS.init();
 	  </script>
+<script type="text/javascript">
 
+var map = L.map('mapid').setView([<?php echo $array6["lat"]; ?>, <?php echo $array6["long"]; ?>], 5);
+
+
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+<?php 
+foreach ($result as $key2):
+$array2 = array('lokasi'=>str_replace('POINT', '', ucwords($key2->lokasi)));
+$array3 = array('lokasi' =>str_replace(')', '', ucwords($array2["lokasi"])));
+$array4 = array('lokasi' =>str_replace('(', '', ucwords($array3["lokasi"])));
+$array5 = array('lokasi' =>str_replace(' -', ' ', ucwords($array4["lokasi"])));
+$pattern = '/(\d+) (\d+).(\d+)/i'; 
+$replacement = '$1 '; 
+$pattern1 = '/(\d+).(\d+) /i';
+$replacement1 = '';
+
+// print output of function 
+$array6 = array(
+'long' => preg_replace($pattern, $replacement, $array5["lokasi"]),
+'lat' => preg_replace($pattern1, $replacement1, $array4["lokasi"])
+);
+
+?>
+
+var marker = L.marker([<?php echo $array6["lat"]; ?>, <?php echo $array6["long"]; ?>]).addTo(map);
+<?php if (isset($key2->namaUniv)) { ?>
+	marker.bindPopup('<b><?php echo $key2->namaUniv; ?></b><br>').openPopup();
+<?php } else { ?>
+	marker.bindPopup('<b><?php echo $key2->itemLabel; ?></b><br>').openPopup();
+<?php } ?>
+<?php endforeach; ?>
+
+</script>
 </body>
 
 </html>

@@ -1,3 +1,31 @@
+<?php
+require_once "lib/EasyRdf.php";
+
+EasyRdf_Namespace::set('wd', 'http://www.wikidata.org/entity/');
+EasyRdf_Namespace::set('wdt', 'http://www.wikidata.org/prop/direct/');
+EasyRdf_Namespace::set('wikibase', 'http://wikiba.se/ontology#');
+
+
+$sparql = new EasyRdf_Sparql_Client('https://query.wikidata.org/sparql');
+$id = isset($_GET['id']) ? $_GET['id'] : '';
+if (empty($id)) {
+	$id='U';
+}
+$query="
+SELECT DISTINCT ?item ?kotaLabel ?foto ?itemLabel ?link
+WHERE{
+		 ?item wdt:P31 wd:Q3918.
+		 ?item wdt:P17 wd:Q252.
+			   ?item wdt:P131 ?kota.
+			   ?item wdt:P856 ?link.
+		 OPTIONAL {
+		   ?item wdt:P154 ?foto .
+}
+FILTER REGEX(?itemLabel, '^".$id."(.*)$', 'i')
+		 SERVICE wikibase:label { bd:serviceParam wikibase:language '[AUTO_LANGUAGE],id'. bd:serviceParam wikibase:language '[AUTO_LANGUAGE],en'. } 
+	 }";
+$semuaUniv = $sparql->query($query);
+?>
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 
@@ -84,10 +112,10 @@
 				<div class="col-first" data-aos="fade-up-left"
 				data-aos-duration="2000">
 					<h1>
-						Search</h1>
+						List of Universities <br> in Indonesia</h1>
 					<nav class="d-flex align-items-center">
 						<a href="index.php">Home<span class="lnr lnr-arrow-right"></span></a>
-						<a href="#">Search<span class=""></span></a>
+						<a href="#">University<span class=""></span></a>
 					</nav>
 				</div>
 			</div>
@@ -96,119 +124,72 @@
 	<!-- End Banner Area -->
 	<div class="container my-3">
 		<div class="row">
+			<div class="btn-toolbar">
+			  <!-- <div class="btn-group btn-group-sm">
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="100">A</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="200">B</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="300">C</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="400">D</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="500">E</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="600">F</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="700">G</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="800">H</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="900">I</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="1000">J</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="1100">K</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="1200">L</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="1300">M</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="1400">N</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="1500">O</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="1600">P</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="1700">Q</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="1800">R</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="1900">S</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="2000">T</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="2100">U</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="2200">V</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="2300">W</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="2400">X</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="2500">Y</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="2600">Z</button>
+			  </div> -->
+			</div>
+		  </div>
+		<div class="row">
 			<div class="col-12">
 				<!-- Start Best Seller -->
 				<section class="lattest-product-area pb-40 category-list">
 					<div class="row">
 						<!-- single product -->
-						<div class="col-lg-3 col-md-6">
-						<div class="single-product" data-aos="fade-up" data-aos-duration="2000">
-							<img class="img-fluid" src="img/product/default.png" alt="">
+						<?php foreach($semuaUniv as $data): ?>
+					<!-- single product -->
+					<div class="col-lg-3 col-md-6">
+						<div class="single-product" data-aos="fade-up"
+						data-aos-duration="1000">
+				      <?php if(!empty($data->foto)): ?>
+							<img class="img-fluid m-auto" src="<?=$data->foto?>" alt="">
+					<?php else: ?>
+						<img class="img-fluid m-auto" src="img/product/default.png" alt="" >
+					<?php endif ?>
 							<div class="product-details px-3">
-								<h6>University of North Sumatra</h6>
+								<h4><?=$data->itemLabel?></h4>
 								<div class="price">
-									<h6>Medan</h6>
+								<?php if(!empty($data->kotaLabel)): ?>
+									<h4><?=$data->kotaLabel?></h4>
+								<?php endif ?>
 									<!-- <h6 class="l-through">$210.00</h6> -->
 								</div>
 								<div class="prd-bottom">
-									<a href="single-product.php" class="social-info">
+									<a href="single-product.php?id=<?php echo $data->link; ?>" class="social-info">
 										<span class="lnr lnr-eye"></span>
 										<p class="hover-text">view more</p>
 									</a>
 								</div>
 							</div>
 						</div>
-					</div>					<!-- single product -->
-						<div class="col-lg-3 col-md-6">
-						<div class="single-product" data-aos="fade-up" data-aos-duration="2000">
-							<img class="img-fluid" src="img/product/default.png" alt="">
-							<div class="product-details px-3">
-								<h6>University of North Sumatra</h6>
-								<div class="price">
-									<h6>Medan</h6>
-									<!-- <h6 class="l-through">$210.00</h6> -->
-								</div>
-								<div class="prd-bottom">
-									<a href="single-product.php" class="social-info">
-										<span class="lnr lnr-eye"></span>
-										<p class="hover-text">view more</p>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>					<!-- single product -->
-						<div class="col-lg-3 col-md-6">
-						<div class="single-product" data-aos="fade-up" data-aos-duration="2000">
-							<img class="img-fluid" src="img/product/default.png" alt="">
-							<div class="product-details px-3">
-								<h6>University of North Sumatra</h6>
-								<div class="price">
-									<h6>Medan</h6>
-									<!-- <h6 class="l-through">$210.00</h6> -->
-								</div>
-								<div class="prd-bottom">
-									<a href="single-product.php" class="social-info">
-										<span class="lnr lnr-eye"></span>
-										<p class="hover-text">view more</p>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>					<!-- single product -->
-						<div class="col-lg-3 col-md-6">
-						<div class="single-product" data-aos="fade-up" data-aos-duration="2000">
-							<img class="img-fluid" src="img/product/default.png" alt="">
-							<div class="product-details px-3">
-								<h6>University of North Sumatra</h6>
-								<div class="price">
-									<h6>Medan</h6>
-									<!-- <h6 class="l-through">$210.00</h6> -->
-								</div>
-								<div class="prd-bottom">
-									<a href="single-product.php" class="social-info">
-										<span class="lnr lnr-eye"></span>
-										<p class="hover-text">view more</p>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>					<!-- single product -->
-						<div class="col-lg-3 col-md-6">
-						<div class="single-product" data-aos="fade-up" data-aos-duration="2000">
-							<img class="img-fluid" src="img/product/default.png" alt="">
-							<div class="product-details px-3">
-								<h6>University of North Sumatra</h6>
-								<div class="price">
-									<h6>Medan</h6>
-									<!-- <h6 class="l-through">$210.00</h6> -->
-								</div>
-								<div class="prd-bottom">
-									<a href="single-product.php" class="social-info">
-										<span class="lnr lnr-eye"></span>
-										<p class="hover-text">view more</p>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>					<!-- single product -->
-						<div class="col-lg-3 col-md-6">
-						<div class="single-product" data-aos="fade-up" data-aos-duration="2000">
-							<img class="img-fluid" src="img/product/default.png" alt="">
-							<div class="product-details px-3">
-								<h6>University of North Sumatra</h6>
-								<div class="price">
-									<h6>Medan</h6>
-									<!-- <h6 class="l-through">$210.00</h6> -->
-								</div>
-								<div class="prd-bottom">
-									<a href="single-product.php" class="social-info">
-										<span class="lnr lnr-eye"></span>
-										<p class="hover-text">view more</p>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>				</div>
+					</div>
+				<?php endforeach ?>																
+				</div>
 				</section>
 				<!-- End Best Seller -->
 			</div>
