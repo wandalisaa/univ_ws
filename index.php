@@ -1,25 +1,26 @@
 <?php
-require_once "lib/EasyRdf.php";
+require_once realpath(__DIR__.'')."/vendor/autoload.php";
+require_once __DIR__."/html_tag_helpers.php";
 
-EasyRdf_Namespace::set('wd', 'http://www.wikidata.org/entity/');
-EasyRdf_Namespace::set('wdt', 'http://www.wikidata.org/prop/direct/');
-EasyRdf_Namespace::set('wikibase', 'http://wikiba.se/ontology#');
-EasyRdf_Namespace::set('p', 'http://www.wikidata.org/prop/');
-EasyRdf_Namespace::set('ps', 'http://www.wikidata.org/prop/statement/');
-EasyRdf_Namespace::set('pq', 'http://www.wikidata.org/prop/qualifier/');
-EasyRdf_Namespace::set('bd', 'http://www.bigdata.com/rdf#');
-EasyRdf_Namespace::set('owl', 'http://www.w3.org/2002/07/owl#');
-EasyRdf_Namespace::set('rdfs', 'http://www.w3.org/2000/01/rdf-schema#');
-EasyRdf_Namespace::set('foaf', 'http://xmlns.com/foaf/0.1/');
-EasyRdf_Namespace::set('dct', 'http://purl.org/dc/terms/');
-EasyRdf_Namespace::set('dbpedia-owl', 'http://dbpedia.org/ontology/');
+\EasyRdf\RdfNamespace::set('wd', 'http://www.wikidata.org/entity/');
+\EasyRdf\RdfNamespace::set('wdt', 'http://www.wikidata.org/prop/direct/');
+\EasyRdf\RdfNamespace::set('wikibase', 'http://wikiba.se/ontology#');
+\EasyRdf\RdfNamespace::set('p', 'http://www.wikidata.org/prop/');
+\EasyRdf\RdfNamespace::set('ps', 'http://www.wikidata.org/prop/statement/');
+\EasyRdf\RdfNamespace::set('pq', 'http://www.wikidata.org/prop/qualifier/');
+\EasyRdf\RdfNamespace::set('bd', 'http://www.bigdata.com/rdf#');
+\EasyRdf\RdfNamespace::set('owl', 'http://www.w3.org/2002/07/owl#');
+\EasyRdf\RdfNamespace::set('rdfs', 'http://www.w3.org/2000/01/rdf-schema#');
+\EasyRdf\RdfNamespace::set('foaf', 'http://xmlns.com/foaf/0.1/');
+\EasyRdf\RdfNamespace::set('dct', 'http://purl.org/dc/terms/');
+\EasyRdf\RdfNamespace::set('dbpedia-owl', 'http://dbpedia.org/ontology/');
 
-EasyRdf_Namespace::set('rdf', 'http://www.w3.org/1999/02/22-rdf-syntax-ns#');
-EasyRdf_Namespace::set('dbo', 'http://dbpedia.org/ontology/');
-EasyRdf_Namespace::set('geo', 'http://www.w3.org/2003/01/geo/wgs84_pos#');
-EasyRdf_Namespace::set('dbr', 'http://dbpedia.org/resource/');
-$sparql = new EasyRdf_Sparql_Client('http://linkeddata.uriburner.com/sparql/');
-$wiki = new EasyRdf_Sparql_Client('https://query.wikidata.org/sparql');
+\EasyRdf\RdfNamespace::set('rdf', 'http://www.w3.org/1999/02/22-rdf-syntax-ns#');
+\EasyRdf\RdfNamespace::set('dbo', 'http://dbpedia.org/ontology/');
+\EasyRdf\RdfNamespace::set('geo', 'http://www.w3.org/2003/01/geo/wgs84_pos#');
+\EasyRdf\RdfNamespace::set('dbr', 'http://dbpedia.org/resource/');
+$sparql = new \EasyRdf\Sparql\Client('http://linkeddata.uriburner.com/sparql/');
+
 $result1 = $sparql->query('
 SELECT DISTINCT * WHERE {
   ?negara rdf:type yago:WikicatMemberStatesOfTheUnitedNations.
@@ -32,6 +33,7 @@ SERVICE <http://query.wikidata.org/sparql>
 { SELECT * WHERE{
   		?item wdt:P31 wd:Q3918.
 		  ?item wdt:P17 wd:Q252.
+		  
 		  OPTIONAL {
 			?item wdt:P154 ?foto .
 }
@@ -192,8 +194,8 @@ endforeach;
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 						<ul class="nav navbar-nav menu_nav ml-auto">
 							<li class="nav-item active"><a class="nav-link" href="index.php">Home</a></li>
-							<li class="nav-item"><a class="nav-link" href="category.php">Universities</a></li>
-							<li class="nav-item"><a class="nav-link" href="contact.php">Compare</a></li>
+							<li class="nav-item"><a class="nav-link" href="all.php">Universities</a></li>
+							<!-- <li class="nav-item"><a class="nav-link" href="profil.php">More Info</a></li> -->
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
 							
@@ -207,8 +209,8 @@ endforeach;
 		</div>
 		<div class="search_input" id="search_input_box">
 			<div class="container">
-				<form class="d-flex justify-content-between">
-					<input type="text" class="form-control" id="search_input" placeholder="Search Here">
+				<form class="d-flex justify-content-between" method="post" action="search.php">
+					<input type="text" class="form-control" id="search_input" name="keyword" placeholder="Enter a city name... Example : makassar">
 					<button type="submit" class="btn"></button>
 					<span class="lnr lnr-cross" id="close_search" title="Close Search"></span>
 				</form>
@@ -230,7 +232,7 @@ endforeach;
 									<h1 data-aos="fade-up" data-aos-duration="2000">Find Out About Universities</h1>
 									<p>Displays university in Indonesia including public and private universities.</p>
 									<div class="add-bag d-flex align-items-center">
-										<a class="add-btn" href="category.php"><span class="lnr lnr-magnifier"></span></a>
+										<a class="add-btn" href="all.php"><span class="lnr lnr-magnifier"></span></a>
 										<span class="add-text text-uppercase">See all universities</span>
 									</div>
 								</div>
@@ -247,10 +249,10 @@ endforeach;
 						<div class="row single-slide">
 							<div class="col-lg-5 pt-5">
 								<div class="banner-content pt-5">
-									<h1>Compare Universities</h1>
-									<p>Select the Compare menu and look for the university you want to compare.</p>
+									<h1>Explore Universities</h1>
+									<p>Select the university </p>
 									<div class="add-bag d-flex align-items-center">
-										<a class="add-btn" href="category.php"><span class="lnr lnr-magnifier"></span></a>
+										<a class="add-btn" href="all.php"><span class="lnr lnr-magnifier"></span></a>
 										<span class="add-text text-uppercase">See all universities</span>
 									</div>
 								</div>
@@ -317,7 +319,7 @@ endforeach;
 									<!-- <h6 class="l-through">$210.00</h6> -->
 								</div>
 								<div class="prd-bottom">
-									<a href="single-product.php?id=<?php echo $data->item; ?>" class="social-info">
+									<a href="single-univ.php?id=<?php echo $data->item; ?>" class="social-info">
 										<span class="lnr lnr-eye"></span>
 										<p class="hover-text">view more</p>
 									</a>
@@ -361,7 +363,7 @@ endforeach;
 									<!-- <h6 class="l-through">$210.00</h6> -->
 								</div>
 								<div class="prd-bottom">
-									<a href="single-product.php?id=<?php echo $data->item; ?>" class="social-info">
+									<a href="single-univ.php?id=<?php echo $data->item; ?>" class="social-info">
 										<span class="lnr lnr-eye"></span>
 										<p class="hover-text">view more</p>
 									</a>

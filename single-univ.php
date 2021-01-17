@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 <?php
- //error_reporting(0);
+error_reporting(0);
 
 require_once realpath(__DIR__.'')."/vendor/autoload.php";
 require_once __DIR__."/html_tag_helpers.php";
@@ -26,8 +26,9 @@ require_once __DIR__."/html_tag_helpers.php";
 \EasyRdf\RdfNamespace::set('dbp', 'http://dbpedia.org/property/');
 
 $sparql = new \EasyRdf\Sparql\Client('http://linkeddata.uriburner.com/sparql/');
+$id = $_GET['id'];
 $result = $sparql->query('
-SELECT ?itemLabel ?lokasi  ?link ?tipe ?kotaLabel ?foto ?fb ?berdiri ?rektor ?desk ?comen
+SELECT ?item ?itemLabel ?lokasi  ?link ?tipe ?kotaLabel ?foto ?fb ?berdiri ?rektor ?desk ?comen
 { 
 SERVICE <http://query.wikidata.org/sparql> 
 { SELECT ?item ?itemLabel ?lokasi ?link ?foto ?kotaLabel ?fb ?berdiri WHERE{
@@ -47,7 +48,7 @@ SERVICE <http://query.wikidata.org/sparql>
 			?item wdt:P856 ?link.
 			}
 	  ?item wdt:P625 ?lokasi.
-      FILTER(?item = wd:Q8045825)
+      FILTER(?item = <'.$id.'>)
 	  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". bd:serviceParam wikibase:language "[AUTO_LANGUAGE],id". } 
 	}
 }
@@ -92,6 +93,9 @@ foreach ($result as $key2):
 	// echo "Lat: $b Long: $a <br>";
 	// echo $array5["lokasi"].'<br>';
 	endforeach;
+
+	
+		// BACA RDF
 		
 		?>
 
@@ -138,16 +142,256 @@ foreach ($result as $key2):
 </head>
 
 <body>
+	<!-- Start Header Area -->
+	<header class="header_area sticky-header">
+		<div class="main_menu">
+			<nav class="navbar navbar-expand-lg navbar-light main_box">
+				<div class="container">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<a class="navbar-brand logo_h" href="index.php"><img 	src="img/logo.png" alt="" width="150"></a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+					 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+						<ul class="nav navbar-nav menu_nav ml-auto">
+							<li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
+							<li class="nav-item active"><a class="nav-link" href="all.php">Universities</a></li>
+							<!-- <li class="nav-item"><a class="nav-link" href="profil.php">More Info</a></li> -->
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							
+							<li class="nav-item">
+								<button class="search"><span class="lnr lnr-magnifier" id="search"></span></button>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+		<div class="search_input" id="search_input_box">
+			<div class="container">
+				<form class="d-flex justify-content-between" method="post" action="search.php">
+					<input type="text" class="form-control" id="search_input" name="keyword" placeholder="Enter a city name... Example : makassar">
+					<button type="submit" class="btn"></button>
+					<span class="lnr lnr-cross" id="close_search" title="Close Search"></span>
+				</form>
+			</div>
+		</div>
+	</header>
+	<!-- End Header Area -->
+
+	<!-- Start Banner Area -->
+	<section class="banner-area organic-breadcrumb">
+		<div class="container">
+			<div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end" data-aos="fade-up-left" data-aos-duration="2000">
+				<div class="col-first">
+					<h1>University Detail</h1>
+					<nav class="d-flex align-items-center">
+						<a href="index.php">Home<span class="lnr lnr-arrow-right"></span></a>
+						<a href="all.php">Universities<span class="lnr lnr-arrow-right"></span></a>
+						<a href="#detail">University Detail</a>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Banner Area -->
 <?php foreach($result as $data): 
+
+$dataset = \EasyRdf\Graph::newAndLoad('http://localhost/univ_ws/univ.rdf');
+$docs = $dataset->primaryTopic();
+$link = strval( $data->link ) ;
+$a=array();
+
+
+\EasyRdf\RdfNamespace::setDefault('og');
+if ($data->link != 'http://www.usu.ac.id' || $data->link != 'http://www.umlampung.ac.id/' ) {
+	
+$detail = [
+	'link'=>$data->link,
+  ];
+// echo $data->link;
+	$doc = \EasyRdf\Graph::newAndLoad($detail['link']);
+}
+
+// $doc = \EasyRdf\Graph::newAndLoad("https://www.usu.ac.id/id/");
 
 	 if (isset($data->berdiri)) {
 		$array = array('berdiri'=>str_replace('T00:00:00Z', '', ucwords($data->berdiri)));
 	 }
+
 	?>
+
+	<!--================Single Product Area =================-->
+	<div class="product_image_area">
+		<div class="container">
+			<div class="row s_product_inner">
+				<div class="col-lg-6">
+					<div class="s_Product_carousel">
+						<div class="single-prd-item">
+						<?php if (isset($data->foto)) { ?>
+							<img class="img-fluid" src="<?=$data->foto?>" alt="">
+						<?php } else { ?>
+							<img class="img-fluid" src="img/product/default.png" alt="">
+						<?php } ?>
+						</div>
+						<div class="single-prd-item">
+						<?php if (isset($doc->image)) { ?>
+							<img class="img-fluid" src="<?=$doc->image?>" alt="">
+						<?php } else { ?>
+							<img class="img-fluid" src="img/product/default.png" alt="">
+						<?php } ?>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-5 offset-lg-1" id="detail" data-aos="fade-down" data-aos-duration="2000">
+					<div class="s_product_text">
+						<h3><?=$data->itemLabel?></h3>
+						<?php if (isset($data->tipe)) { ?>
+							<h2><?=$data->tipe?></h2>
+						<?php } ?>
+						
+						<ul class="list">
+							<li><a class="active" href="#">
+							<?php if (isset($data->kotaLabel)) { ?>
+								<span>City</span> : <?=$data->kotaLabel?>
+							<?php } ?>
+							<span>City</span> : -
+							</a></li>
+							<li><a href="#"><span>Country</span> : Indonesia</a></li>
+						</ul>
+						<?php if (isset($data->comen)) { ?>
+							<p><?=$data->comen?></p>
+						<?php } else {?>
+						<p>Description Not Found</p>
+						<?php } ?>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--================End Single Product Area =================-->
 
 	<!--================Product Description Area =================-->
 	<section class="product_description_area" data-aos="fade-down" data-aos-duration="2000">
 		<div class="container">
+			<ul class="nav nav-tabs" id="myTab" role="tablist">
+				<li class="nav-item">
+					<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Description</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+					 aria-selected="false">More Info</a>
+				</li>
+			</ul>
+			<div class="tab-content" id="myTabContent">
+				<div class="tab-pane fade  show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+				<?php if (isset($data->desk)) { ?>
+							<p><?=$data->desk?></p>
+						<?php } else {?>
+						<p>Description Not Found</p>
+						<?php } ?>
+				</div>
+				<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+					<div class="table-responsive">
+						<table class="table">
+							<tbody>
+								<tr>
+									<td>
+										<h5>Founding Date</h5>
+									</td>
+									<td>
+									<?php if (isset($data->berdiri)) { ?>
+											<h5><?=$array['berdiri'];?></h5>
+										<?php } else {?>
+										<p>Not Found</p>
+										<?php } ?>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<h5>Rector </h5>
+									</td>
+									<td>
+									<?php if (isset($data->rektor)) { ?>
+											<h5><?=$data->rektor?></h5>
+										<?php } else {?>
+										<p>Not Found</p>
+										<?php } ?>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<h5>Website Description  </h5>
+									</td>
+									<td>
+									<?php if (!empty($doc->description)) { ?>
+											<h5><?=$doc->description;?></h5>
+										<?php } else {?>
+										<p>Not Found</p>
+										<?php } ?>
+									</td>
+								</tr>
+								<?php
+									 foreach ($docs->all('foaf:consists') as $key ):  
+
+										if ( $key->get('foaf:homepage') == $link ):
+								?>
+								<tr>
+									<td>
+										<h5>Akreditasi</h5>
+									</td>
+									<td>
+										<h5><?=$key->get('foaf:akreditasi');?></h5>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<h5>Number of Study Program</h5>
+									</td>
+									<td>
+										<h5><?=$key->get('foaf:jurusan');?></h5>
+									</td>
+								</tr>
+								<?php endif; endforeach; ?>
+								<tr>
+									<td>
+										<h5>Official Website</h5>
+									</td>
+									<td>
+										<h5><a href="<?=$data->link?>"><?=$data->link?></a></h5>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<h5>Facebook Id</h5>
+									</td>
+									<td>
+									<?php if (isset($data->fb)) { ?>
+											<h5><?=$data->fb?></h5>
+										<?php } else {?>
+										<p>Not Found</p>
+										<?php } ?>
+									</td>
+								</tr>
+								<!-- <tr>
+									<td>
+										<h5>Motto</h5>
+									</td>
+									<td>
+										<h5>Toward Excellence as University for Industry</h5>
+									</td>
+								</tr> -->
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
 			<!-- <div  id="mapBox" class="mapBox" data-lat="40.701083" data-lon="-74.1522848" data-zoom="13" data-info="PO Box CT16122 Collins Street West, Victoria 8007, Australia."
 			data-mlat="40.701083" data-mlon="-74.1522848">
 		   </div> -->

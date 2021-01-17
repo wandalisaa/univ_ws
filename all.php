@@ -8,8 +8,7 @@ require_once __DIR__."/html_tag_helpers.php";
 
 
 $sparql = new \EasyRdf\Sparql\Client('https://query.wikidata.org/sparql');
-$kota = $_POST['keyword'];
-$key = strval($kota);
+
 $semuaUniv = $sparql->query('
 SELECT DISTINCT ?item ?kotaLabel ?foto ?itemLabel ?link
  WHERE{
@@ -18,13 +17,12 @@ SELECT DISTINCT ?item ?kotaLabel ?foto ?itemLabel ?link
 				?item wdt:P131 ?kota.
 		
 				?item wdt:P856 ?link.
-   ?kota ?Label "'.$kota.'".
 		  OPTIONAL {
 			?item wdt:P856 ?link.
 			?item wdt:P154 ?foto .
 }
   		SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],id". bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". } 
-  	} ORDER BY ?foto
+  	} ORDER BY ?kota
 ');
 ?>
 <!DOCTYPE html>
@@ -113,7 +111,7 @@ SELECT DISTINCT ?item ?kotaLabel ?foto ?itemLabel ?link
 				<div class="col-first" data-aos="fade-up-left"
 				data-aos-duration="2000">
 					<h1>
-						Universities in <?=$kota?><br></h1>
+						List of Universities <br> in Indonesia</h1>
 					<nav class="d-flex align-items-center">
 						<a href="index.php">Home<span class="lnr lnr-arrow-right"></span></a>
 						<a href="#">University<span class=""></span></a>
@@ -124,6 +122,38 @@ SELECT DISTINCT ?item ?kotaLabel ?foto ?itemLabel ?link
 	</section>
 	<!-- End Banner Area -->
 	<div class="container my-3">
+		<div class="row">
+			<div class="btn-toolbar">
+			  <!-- <div class="btn-group btn-group-sm">
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="100">A</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="200">B</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="300">C</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="400">D</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="500">E</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="600">F</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="700">G</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="800">H</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="900">I</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="1000">J</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="1100">K</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="1200">L</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="1300">M</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="1400">N</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="1500">O</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="1600">P</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="1700">Q</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="1800">R</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="1900">S</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="2000">T</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="2100">U</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="2200">V</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="2300">W</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="2400">X</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="2500">Y</button>
+				<button class="btn btn-default btn-alpha" data-aos="fade-up" data-aos-duration="2600">Z</button>
+			  </div> -->
+			</div>
+		  </div>
 		<div class="row">
 			<div class="col-12">
 				<!-- Start Best Seller -->
@@ -141,7 +171,7 @@ SELECT DISTINCT ?item ?kotaLabel ?foto ?itemLabel ?link
 						<img class="img-fluid m-auto" src="img/product/default.png" alt="" >
 					<?php endif ?>
 							<div class="product-details px-3">
-								<h4><?=$data->itemLabel?></h4>
+								<h6><?=$data->itemLabel?></h6>
 								<div class="price">
 								<?php if(!empty($data->kotaLabel)): ?>
 									<h4><?=$data->kotaLabel?></h4>

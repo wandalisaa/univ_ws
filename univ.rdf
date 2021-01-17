@@ -1,0 +1,1582 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:foaf="http://xmlns.com/foaf/0.1/"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:dc="http://purl.org/dc/terms/">
+
+    <foaf:University rdf:about="http://localhost/univ_ws/univ.rdf">
+    <rdfs:label>Universitas In Indonesia</rdfs:label>
+    <foaf:maker rdf:resource="http://localhost/univ_ws/"/>
+    <foaf:primaryTopic rdf:resource="http://localhost/univ_ws/"/>
+  </foaf:University>
+
+  <foaf:Universities rdf:about="http://localhost/univ_ws/">
+    <foaf:name>Universitas</foaf:name>
+
+    <foaf:consists>
+      <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q12522872">
+         <foaf:name>National Institute of Technology</foaf:name>
+        <foaf:akreditasi>B</foaf:akreditasi>
+        <foaf:jurusan>15</foaf:jurusan>
+        <foaf:homepage rdf:resource="http://www.itenas.ac.id/"/>
+      </foaf:Univ>
+    </foaf:consists>
+
+    <foaf:consists>
+      <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q12486122">
+         <foaf:name>State Islamic University of North Sumatra</foaf:name>
+        <foaf:akreditasi>B</foaf:akreditasi>
+        <foaf:jurusan>10</foaf:jurusan>
+        <foaf:homepage rdf:resource="http://uinsu.ac.id"/>
+      </foaf:Univ>
+    </foaf:consists>
+
+    <foaf:consists>
+      <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q12518185">
+        <foaf:name>Surya University</foaf:name>
+        <foaf:akreditasi>B</foaf:akreditasi>
+        <foaf:jurusan>12</foaf:jurusan>
+        <foaf:homepage rdf:resource="http://www.surya.ac.id/"/>
+      </foaf:Univ>
+    </foaf:consists>
+
+      <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q12523311">
+          <foaf:name>Universitas Cokroaminoto Palopo</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>14</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://uncp.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+    <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q12523389">
+          <foaf:name>Lampung Muhammadiyah University</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>9</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://www.umlampung.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q12523390">
+          <foaf:name>Muhammadiyah University of Jakarta</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>42</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://www.umj.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q12523412">
+          <foaf:name>Universitas Nahdlatul Wathan Mataram</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>21</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://unwmataram.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q12523473">
+          <foaf:name>Tadulako University</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>65</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://www.untad.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q12506039">
+          <foaf:name>Politeknik Pertanian Negeri Samarinda</foaf:name>
+          <foaf:akreditasi>C</foaf:akreditasi>
+          <foaf:jurusan>9</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://www.poltanesa.ac.id"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q12523394">
+          <foaf:name>Universitas Muhammadiyah Palangkaraya</foaf:name>
+          <foaf:akreditasi>C</foaf:akreditasi>
+          <foaf:jurusan>16</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://www.um-palangkaraya.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q12523342">
+          <foaf:name>Universitas Islam Lamongan</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>12</foaf:jurusan>    
+          <foaf:homepage rdf:resource="http://www.unisla.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q11223593">
+          <foaf:name>Universitas Islam Negeri Walisongo</foaf:name>
+          <foaf:akreditasi>A</foaf:akreditasi>
+          <foaf:jurusan>35</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://walisongo.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q14917501">
+          <foaf:name>Universitas Islam Negeri Maulana Malik Ibrahim</foaf:name>
+          <foaf:akreditasi>A</foaf:akreditasi>
+          <foaf:jurusan>33</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://www.uin-malang.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q12522871">
+          <foaf:name>State Islamic University of Sultan Syarif Kasim II</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>52</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://www.uin-suska.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q12523348">
+          <foaf:name>Sunan Kalijaga Islamic University</foaf:name>
+          <foaf:akreditasi>A</foaf:akreditasi>
+          <foaf:jurusan>48</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://www.uin-suska.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q12523421">
+          <foaf:name>Pakuan University</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>32</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://www.unpak.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q15057698">
+          <foaf:name>Telkom University</foaf:name>
+          <foaf:akreditasi>A</foaf:akreditasi>
+          <foaf:jurusan>46</foaf:jurusan>
+          <foaf:homepage rdf:resource=" http://www.telkomuniversity.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q13405291">
+          <foaf:name>Jakarta State Polytechnic</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>44</foaf:jurusan>   
+          <foaf:homepage rdf:resource=" http://www.pnj.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q14457713">
+          <foaf:name>Atma Jaya University, Yogyakarta</foaf:name>
+          <foaf:akreditasi>A</foaf:akreditasi>
+          <foaf:jurusan>23</foaf:jurusan>
+          <foaf:homepage rdf:resource=" http://www.uajy.ac.id"/>
+        </foaf:Univ>
+    </foaf:consists>
+
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q13098258">
+          <foaf:name>Universitas Jember</foaf:name>
+          <foaf:akreditasi>A</foaf:akreditasi>
+          <foaf:jurusan>114</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://unej.ac.id"/>
+        </foaf:Univ>
+    </foaf:consists>
+
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q13098259">
+          <foaf:name>Universitas Merdeka Malang</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>28</foaf:jurusan>    
+          <foaf:homepage rdf:resource="http://www.unmer.ac.id"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q12523296">
+          <foaf:name>Balikpapan University</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>13</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://www.uniba-bpn.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q12523332">
+          <foaf:name>Indraprasta PGRI University</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>16</foaf:jurusan>     
+          <foaf:homepage rdf:resource="http://www.unindra.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q12523349">
+          <foaf:name> Jakarta State Islamic University</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>15</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://www.uinjkt.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q12523288">
+          <foaf:name>University Achmad Yani</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>28</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://www.uay.ac.id"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q12523450">
+          <foaf:name>University of Science and Technology Jayapura</foaf:name>
+          <foaf:akreditasi>C</foaf:akreditasi>
+          <foaf:jurusan>21</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://www.ustj.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+    <foaf:consists>   
+        <foaf:Univ>
+          <foaf:name> Universitas Wiraswasta Indonesia</foaf:name>
+          <foaf:jurusan>2</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://www.uwin.ac.id/"/>
+    </foaf:Univ>
+  </foaf:consists>
+
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q12523435">
+          <foaf:name>Universitas Persada Indonesia YAI</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>20</foaf:jurusan>l>
+          <foaf:homepage rdf:resource="http://www.yai.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q12523330">
+          <foaf:name>Hang Tuah University</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>27</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://www.hangtuah.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q12486647">
+          <foaf:name>Institute of Social and Political Science Jakarta</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>19</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://www.iisip.ac.id"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q12523295">
+          <foaf:name>Bakrie University</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>12</foaf:jurusan>
+          <foaf:homepage rdf:resource=" http://www.bakrie.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q12523300">
+          <foaf:name>Batam University</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>25</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://univbatam.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q12523319">
+          <foaf:name>Dwijendra University</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>10</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://undwi.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q12523282">
+          <foaf:name>Universitas 17 Agustus 1945</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>15</foaf:jurusan>     
+          <foaf:homepage rdf:resource="http://www.uta45jakarta.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q12523431">
+          <foaf:name>University of Pembangunan Panca Budi</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>17</foaf:jurusan>abel>
+          <foaf:homepage rdf:resource="http://www.pancabudi.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q11040557">
+          <foaf:name>Universitas Stikubank</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>18</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://www.stikubank.ac.id"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q11040557">
+          <foaf:name>Universitas Stikubank</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>18</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://www.unisbank.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q13098264">
+          <foaf:name> Universitas Muhammadiyah Purworejo</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>17</foaf:jurusan>abel>
+          <foaf:homepage rdf:resource="http://www.umpwr.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q14091635">
+          <foaf:name>Parahyangan Catholic University</foaf:name>
+          <foaf:akreditasi>A</foaf:akreditasi>
+          <foaf:jurusan>36</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://www.unpar.ac.id"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q12523284">
+          <foaf:name>Universitas 17 Agustus 1945</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>15</foaf:jurusan>    
+          <foaf:homepage rdf:resource="http://www.untag-sby.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q12506033">
+          <foaf:name>Politeknik Negeri Samarinda</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>40</foaf:jurusan>    
+          <foaf:homepage rdf:resource="http://www.polnes.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q12511352">
+          <foaf:name>Dharma Andalasniversity</foaf:name>
+          <foaf:akreditasi>C</foaf:akreditasi>
+          <foaf:jurusan>14</foaf:jurusan>
+          <foaf:homepage rdf:resource="https://unidha.ac.id"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q12523306">
+          <foaf:name>Bojonegoro University</foaf:name>
+          <foaf:akreditasi>C</foaf:akreditasi>
+          <foaf:jurusan>8</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://www.unigoro.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q12523344">
+          <foaf:name>Islamic University of Malang</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>36</foaf:jurusan>      
+          <foaf:homepage rdf:resource="http://www.unisma.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q12523454">
+          <foaf:name>Universitas Satya Negara Indonesia</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>14</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://usni.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q13098212">
+          <foaf:name>Sunan Gunung Djati State Islamic University Bandung</foaf:name>
+          <foaf:akreditasi>A</foaf:akreditasi>
+          <foaf:jurusan>73</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://www.uinsgd.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q14933725">
+          <foaf:name>Universitas Islam Jakarta</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>15</foaf:jurusan>   
+          <foaf:homepage rdf:resource="http://www.uid.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q12522872">
+          <foaf:name>Alauddin Islamic State University</foaf:name>
+          <foaf:akreditasi>A</foaf:akreditasi>
+          <foaf:jurusan>69</foaf:jurusan>l>
+          <foaf:homepage rdf:resource="http://www.uin-alauddin.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q12522872">
+          <foaf:name>Alauddin Islamic State University</foaf:name>
+          <foaf:akreditasi>A</foaf:akreditasi>
+          <foaf:jurusan>69</foaf:jurusan>l>
+          <foaf:homepage rdf:resource="http://www.uin-alauddin.ac.id/home"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q12523340">
+          <foaf:name>Muhammad Arsyad Al-Banjary Kalimantan Islamic University</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>29</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://uniska-bjm.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q12523310">
+          <foaf:name>Universitas Ciputra</foaf:name>
+          <foaf:akreditasi>A</foaf:akreditasi>
+          <foaf:jurusan>16</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://uc.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q12523315">
+          <foaf:name>Universitas Darul Ulum Jombang</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>24</foaf:jurusan>        
+          <foaf:homepage rdf:resource="http://www.undar.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q12523312">
+          <foaf:name>Universitas Cokroaminoto Yogyakarta</foaf:name>
+          <foaf:akreditasi>C</foaf:akreditasi>
+          <foaf:jurusan>8</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://www.ucy.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q12523304">
+          <foaf:name>Baturaja University</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>15</foaf:jurusan>
+          <foaf:homepage rdf:resource=" http://www.unbara.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q12523333">
+          <foaf:name>Batam International University</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>13</foaf:jurusan>        
+          <foaf:homepage rdf:resource="http://www.uib.edu/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q12523314">
+          <foaf:name>Darma Persada University</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>21</foaf:jurusan>  
+          <foaf:homepage rdf:resource="http://www.unsada.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q12523365">
+          <foaf:name>Widya Mandala Catholic University</foaf:name>
+          <foaf:akreditasi>C</foaf:akreditasi>
+          <foaf:jurusan>10</foaf:jurusan>l>
+          <foaf:homepage rdf:resource="http://www.ukwms.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================= -->
+
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q15972910">
+          <foaf:name>STMIK Kharisma</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>4</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://stmik-kharisma.ac.id"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+    <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q10980312">
+          <foaf:name>Kuningan University</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>19</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://www.uniku.ac.id"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+        <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q600107">
+          <foaf:name>Swiss German University</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:homepage rdf:resource="http://www.sgu.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q7683446">
+          <foaf:name>Tanjungpura University</foaf:name>
+          <foaf:akreditasi>A</foaf:akreditasi>
+          <foaf:jurusan>95</foaf:jurusan><foaf:homepage rdf:resource="http://www.untan.ac.id"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q6932911">
+          <foaf:name>Muhammadiyah University of Makassar</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>38</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://www.unismuh.ac.id"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+  <foaf:Univ>
+          <foaf:name>Telkom Institute of Management</foaf:name>
+          <foaf:jurusan>8</foaf:jurusan>
+            <foaf:homepage rdf:resource="http://www.imtelkom.ac.id/"/>
+    </foaf:Univ>
+  </foaf:consists>
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q17997449">
+          <foaf:name>Universitas 17 Agustus 1945</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>15</foaf:jurusan>    
+          <foaf:homepage rdf:resource="http://www.untagcirebon.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q2044489">
+          <foaf:name>Manado State University</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>51</foaf:jurusan> 
+          <foaf:homepage rdf:resource="http://www.unima.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q6177417">
+          <foaf:name>Jenderal Soedirman University</foaf:name>
+          <foaf:akreditasi>A</foaf:akreditasi>
+          <foaf:jurusan>80</foaf:jurusan>       
+          <foaf:homepage rdf:resource="http://www.unsoed.ac.id"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q19744766">
+          <foaf:name>Dehasen University</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>19</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://www.unived.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q7894412">
+          <foaf:name>Universitas Kristen Indonesia</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>32</foaf:jurusan>       
+          <foaf:homepage rdf:resource="http://www.uki.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q7894418">
+          <foaf:name>Universitas Nasional</foaf:name>
+          <foaf:akreditasi>A</foaf:akreditasi>
+          <foaf:jurusan>33</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://www.unas.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q7895547">
+        <foaf:homepage rdf:resource="http://www.igi.ac.id/"/>
+        <foaf:name>University of International Golden Indonesia</foaf:name>
+      </foaf:Univ>
+  </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q7896370">
+      <foaf:name>University of Surabaya</foaf:name>
+          <foaf:akreditasi>A</foaf:akreditasi>
+          <foaf:jurusan>50</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://www.ubaya.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q7603634">
+          <foaf:name>Padang State University</foaf:name>
+          <foaf:akreditasi>A</foaf:akreditasi>
+          <foaf:jurusan>98</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://www.unp.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q24450314">
+          <foaf:name>Indonesian Christian University of Maluku</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>15</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://ukim.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q7442749">
+          <foaf:name>Sebelas Maret University</foaf:name>
+          <foaf:akreditasi>A</foaf:akreditasi>
+          <foaf:jurusan>176</foaf:jurusan> 
+          <foaf:homepage rdf:resource="http://www.uns.ac.id"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q7452397">
+          <foaf:name>Sepuluh Nopember Institute of Technology</foaf:name>
+          <foaf:akreditasi>A</foaf:akreditasi>
+          <foaf:jurusan>39</foaf:jurusan>
+          <foaf:homepage rdf:resource="https://www.its.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q7481592">
+          <foaf:name>University of Bengkulu</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>82</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://www.unib.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q280361">
+          <foaf:name>Andalas University</foaf:name>
+          <foaf:akreditasi>A</foaf:akreditasi>
+          <foaf:jurusan>116</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://www.unib.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q4200297">
+          <foaf:name>Sriwijaya University</foaf:name>
+          <foaf:akreditasi>A</foaf:akreditasi>
+          <foaf:jurusan>119</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://www.unsri.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q350752">
+          <foaf:name>Islamic University of Indonesia</foaf:name>
+          <foaf:akreditasi>A</foaf:akreditasi>
+          <foaf:jurusan>48</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://www.uii.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+        <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q47927">
+          <foaf:name>Muhammadiyah University of Malang</foaf:name>
+          <foaf:akreditasi>A</foaf:akreditasi>
+          <foaf:homepage rdf:resource="http://www.umm.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q1847733">
+          <foaf:name>Pelita Harapan University</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>28</foaf:jurusan>   
+          <foaf:homepage rdf:resource="http://www.uph.edu/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q7603611">
+          <foaf:name>State University of Medan</foaf:name>
+          <foaf:akreditasi>A</foaf:akreditasi>
+          <foaf:jurusan>74</foaf:jurusan>   
+          <foaf:homepage rdf:resource="http://www.unimed.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q4250919">
+          <foaf:name>State University of Malang</foaf:name>
+          <foaf:akreditasi>AA</foaf:akreditasi>
+          <foaf:jurusan>120</foaf:jurusan>    
+          <foaf:homepage rdf:resource="http://www.um.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q6754778">
+          <foaf:name>Maranatha Christian University</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>28</foaf:jurusan>        
+          <foaf:homepage rdf:resource="http://www.maranatha.edu/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q4854741">
+          <foaf:name>Bandung Islamic University</foaf:name>
+          <foaf:akreditasi>A</foaf:akreditasi>
+          <foaf:jurusan>29</foaf:jurusan>    
+          <foaf:homepage rdf:resource="http://www.unisba.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q19744818">
+          <foaf:name>Universitas Musamus Merauke</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>28</foaf:jurusan>    
+          <foaf:homepage rdf:resource="http://www.unmus.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q19749127">
+          <foaf:name>Universitas Al Washliyah</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>16</foaf:jurusan>  
+          <foaf:homepage rdf:resource="http://www.univamedan.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q6026037">
+          <foaf:name>Indonesian Adventist University</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>16</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://www.unai.edu/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q6026203">
+          <foaf:name>Indonesian State College of Accountancy</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>11</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://www.stan.ac.id"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q48971537">
+          <foaf:name>Nahdlatul Ulama Islamic University</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>19</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://www.unisnu.ac.id"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q4797596">
+          <foaf:name>Artha Wacana Christian University</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>16</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://www.ukaw.ac.id"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q7847992">
+          <foaf:name>Trunojoyo University</foaf:name>
+          <foaf:akreditasi>A</foaf:akreditasi>
+          <foaf:jurusan>30</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://www.trunojoyo.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q3130435">
+          <foaf:name>Cenderawasih University</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>35</foaf:jurusan> 
+          <foaf:homepage rdf:resource="http://www.uncen.ac.id"/>
+        </foaf:Univ>
+    </foaf:consists>
+    
+    <!-- ============================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q4250926">
+          <foaf:name>Trisakti University</foaf:name>
+          <foaf:akreditasi>A</foaf:akreditasi>
+          <foaf:jurusan>38</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://www.trisakti.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q19744849">
+          <foaf:name>Universitas Teuku Umar</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>18</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://utu.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+
+    <!-- ============================================================== -->
+
+
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q1573634">
+          <foaf:name>Udayana University</foaf:name>
+          <foaf:akreditasi>A</foaf:akreditasi>
+          <foaf:jurusan>117</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://www.unud.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q478044">
+          <foaf:name>Hasanuddin University</foaf:name>
+          <foaf:akreditasi>A</foaf:akreditasi>
+          <foaf:jurusan>119</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://www.unhas.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q7426888">
+          <foaf:name>Satya Wacana Christian University</foaf:name>
+          <foaf:akreditasi>A</foaf:akreditasi>
+          <foaf:jurusan>44</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://www.uksw.edu"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q5920236">
+          <foaf:name>Indonesian Institute of the Arts</foaf:name>
+          <foaf:akreditasi>A</foaf:akreditasi>
+          <foaf:jurusan>13</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://www.isi-dps.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q4946088">
+          <foaf:name>Borneo Tarakan University</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>17</foaf:jurusan>   
+          <foaf:homepage rdf:resource="http://www.borneo.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q20427714">
+          <foaf:name>Al Asyariah Mandar University</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>12</foaf:jurusan>       
+          <foaf:homepage rdf:resource="http://www.unasman.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q25630027">
+          <foaf:name>Majalengka University</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>23</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://www.universitas-majalengka.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q90919671">
+          <foaf:name>Institut Teknologi and Sains Nahdlatul Ulama</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>7</foaf:jurusan>
+          <foaf:homepage rdf:resource="https://www.itsnupasuruan.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+    <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q1579397">
+          <foaf:name>Institut Teknologi Bandung</foaf:name>
+          <foaf:akreditasi>A</foaf:akreditasi>
+          <foaf:jurusan>50</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://www.itb.ac.id"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q2610734">
+          <foaf:name>Multimedia Nusantara University</foaf:name>
+          <foaf:akreditasi>A</foaf:akreditasi>
+          <foaf:jurusan>14</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://umn.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q7603641">
+          <foaf:name>State University of Semarang</foaf:name>
+          <foaf:akreditasi>A</foaf:akreditasi>
+          <foaf:jurusan>118</foaf:jurusan>      
+          <foaf:homepage rdf:resource="http://www.unnes.ac.id"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q7894414">
+          <foaf:name>Universitas Kristen Krida Wacana</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>14</foaf:jurusan>>
+          <foaf:homepage rdf:resource="http://www.ukrida.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q7894417">
+          <foaf:name>Universitas Siswa Bangsa Internasional</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>10</foaf:jurusan>:label>
+          <foaf:homepage rdf:resource="http://www.usbi.ac.id"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q7895720">
+          <foaf:name>University of Mataram</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>44</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://www.unram.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q7896000">
+          <foaf:name>University of Nusa Cendana</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>56</foaf:jurusan>    
+          <foaf:homepage rdf:resource="http://www.undana.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q3846721">
+          <foaf:name>Telkom Institute of Technology</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>11</foaf:jurusan>        
+          <foaf:homepage rdf:resource="http://www.ittelkom.ac.id"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q6933777">
+          <foaf:name>Mulawarman University</foaf:name>
+          <foaf:akreditasi>A</foaf:akreditasi>
+          <foaf:jurusan>96</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://www.unmul.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q8045825">
+          <foaf:name>YARSI University</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>12</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://www.yarsi.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q43398922">
+          <foaf:name>Universitas Nurul Jadid</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>24</foaf:jurusan> 
+          <foaf:homepage rdf:resource="https://unuja.ac.id"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q7894421">
+          <foaf:name>Universitas Terbuka</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>46</foaf:jurusan>
+          <foaf:homepage rdf:resource="https://www.ut.ac.id"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  <foaf:consists>
+    <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q19744770">
+          <foaf:name>Galuh University</foaf:name>
+          <foaf:akreditasi>B</foaf:akreditasi>
+          <foaf:jurusan>22</foaf:jurusan>
+          <foaf:homepage rdf:resource="http://www.universitas-galuh.ac.id/"/>
+        </foaf:Univ>
+    </foaf:consists>
+  <!-- ======================================================================== -->
+  
+    
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q19744776">
+  <foaf:akreditasi>B</foaf:akreditasi>
+  <foaf:jurusan>22</foaf:jurusan>
+        <foaf:name>Ibn Khaldun Bogor University</foaf:name>
+      <foaf:homepage rdf:resource="http://www.uika-bogor.ac.id/"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q6482697">
+ <foaf:akreditasi>A</foaf:akreditasi>
+  <foaf:jurusan>84</foaf:jurusan>
+       <foaf:name>Lampung University</foaf:name>
+      <foaf:homepage rdf:resource="http://www.unila.ac.id/"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q104630664">
+  <foaf:akreditasi>B</foaf:akreditasi>
+  <foaf:jurusan>10</foaf:jurusan>      
+  <foaf:name>Universitas Kahuripan</foaf:name>
+      <foaf:homepage rdf:resource="https://www.kahuripan.ac.id/"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q104631047">
+ <foaf:akreditasi>C</foaf:akreditasi>
+  <foaf:jurusan>3</foaf:jurusan>      
+  <foaf:name>Universitas Lumajang</foaf:name>
+      <foaf:homepage rdf:resource="http://unilu.ac.id/"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q104631456">
+  <foaf:akreditasi>B</foaf:akreditasi>
+  <foaf:jurusan>31</foaf:jurusan>     
+   <foaf:name>Universitas PGRI Adi Buana</foaf:name>
+      <foaf:homepage rdf:resource="https://unipasby.ac.id/"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q104632240">
+  <foaf:akreditasi>B</foaf:akreditasi>
+  <foaf:jurusan>16</foaf:jurusan>      
+  <foaf:name>Universitas PGRI Ronggolawe</foaf:name>
+      <foaf:homepage rdf:resource="https://unirow.ac.id/"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q104632294">
+  <foaf:akreditasi>C</foaf:akreditasi>
+  <foaf:jurusan>3</foaf:jurusan>     
+   <foaf:name>Universitas Sunan Bonang</foaf:name>
+      <foaf:homepage rdf:resource="https://usb.ac.id/"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q10829079"> 
+  <foaf:akreditasi>B</foaf:akreditasi>
+  <foaf:jurusan>15</foaf:jurusan>
+        <foaf:name>Mount Klabat College</foaf:name>
+      <foaf:homepage rdf:resource="http://www.unklab.ac.id"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q4263077">
+  <foaf:akreditasi>B</foaf:akreditasi>
+  <foaf:jurusan>19</foaf:jurusan>
+       <foaf:name>Muhammadiyah University of Magelang</foaf:name>
+      <foaf:homepage rdf:resource="http://www.ummgl.ac.id/"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q5643706">
+ <foaf:akreditasi>B</foaf:akreditasi>
+  <foaf:jurusan>109</foaf:jurusan>
+       <foaf:name>Haluoleo University</foaf:name>
+      <foaf:homepage rdf:resource="http://www.unhalu.ac.id/"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q6684388">
+  <foaf:akreditasi>B</foaf:akreditasi>
+  <foaf:jurusan>21</foaf:jurusan>
+       <foaf:name>Politeknik Negeri Banjarmasin</foaf:name>
+      <foaf:homepage rdf:resource="http://www.poliban.ac.id"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q7408055">
+  <foaf:akreditasi>A</foaf:akreditasi>
+  <foaf:jurusan>83</foaf:jurusan>
+       <foaf:name>Sam Ratulangi University</foaf:name>
+      <foaf:homepage rdf:resource="http://www.unsrat.ac.id/"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q4200341">
+  <foaf:akreditasi>A</foaf:akreditasi>
+  <foaf:jurusan>145</foaf:jurusan>
+       <foaf:name>University of North Sumatra</foaf:name>
+      <foaf:homepage rdf:resource="http://www.usu.ac.id"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q7476068">
+ 
+ <foaf:akreditasi>A</foaf:akreditasi>
+  <foaf:jurusan>43</foaf:jurusan>
+       <foaf:name>Universitas Pasundan</foaf:name>
+      <foaf:homepage rdf:resource="http://www.unpas.ac.id"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q7603607">
+  <foaf:akreditasi>A</foaf:akreditasi>
+  <foaf:jurusan>117</foaf:jurusan>
+       <foaf:name>State University of Makassar</foaf:name>
+      <foaf:homepage rdf:resource="http://www.unm.ac.id/"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q5629974">
+  <foaf:akreditasi>B</foaf:akreditasi>
+  <foaf:jurusan>34</foaf:jurusan>
+       <foaf:name>HKBP Nommensen University</foaf:name>
+      <foaf:homepage rdf:resource="http://www.uhn.ac.id/"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q104632357">
+   <foaf:akreditasi>B</foaf:akreditasi>
+  <foaf:jurusan>12</foaf:jurusan>     
+   <foaf:name>Universitas Sunan Giri</foaf:name>
+      <foaf:homepage rdf:resource="https://unsuri.ac.id/"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q5317233">
+  <foaf:akreditasi>A</foaf:akreditasi>
+  <foaf:jurusan>16</foaf:jurusan>
+       <foaf:name>Duta Wacana Christian University</foaf:name>
+      <foaf:homepage rdf:resource="http://www.ukdw.ac.id"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q19744853">  
+  <foaf:akreditasi>Baik Sekali</foaf:akreditasi>
+  <foaf:jurusan>25</foaf:jurusan>
+        <foaf:name>Warmadewa University</foaf:name>
+      <foaf:homepage rdf:resource="http://www.warmadewa.ac.id/"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q19744836">
+  <foaf:akreditasi>B</foaf:akreditasi>
+  <foaf:jurusan>14</foaf:jurusan>
+        <foaf:name>Universitas Respati Indonesia</foaf:name>
+      <foaf:homepage rdf:resource="http://www.urindo.ac.id/"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q1896627">
+  <foaf:akreditasi>A</foaf:akreditasi>
+  <foaf:jurusan>115</foaf:jurusan>
+       <foaf:name>Lambung Mangkurat University</foaf:name>
+      <foaf:homepage rdf:resource="http://www.unlam.ac.id"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q7895145">
+  <foaf:akreditasi>B</foaf:akreditasi>
+  <foaf:jurusan>19</foaf:jurusan>
+       <foaf:name>University of Bunda Mulia</foaf:name>
+      <foaf:homepage rdf:resource="http://www.ubm.ac.id/"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q7241248">
+ <foaf:akreditasi>A</foaf:akreditasi>
+  <foaf:jurusan>18</foaf:jurusan>
+       <foaf:name>President University</foaf:name>
+      <foaf:homepage rdf:resource="http://www.president.ac.id/"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q1494353">
+  <foaf:akreditasi>A</foaf:akreditasi>
+  <foaf:jurusan>174</foaf:jurusan>
+       <foaf:name>Airlangga University</foaf:name>
+      <foaf:homepage rdf:resource="http://www.unair.ac.id"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q7322177">
+ <foaf:akreditasi>A</foaf:akreditasi>
+  <foaf:jurusan>97</foaf:jurusan>
+       <foaf:name>Riau University</foaf:name>
+      <foaf:homepage rdf:resource="http://www.unri.ac.id"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q3213529">
+  <foaf:akreditasi>A</foaf:akreditasi>
+  <foaf:jurusan>164</foaf:jurusan>
+       <foaf:name>Indonesia University of Education</foaf:name>
+      <foaf:homepage rdf:resource="http://www.upi.edu/"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q2306715">
+  <foaf:akreditasi>A</foaf:akreditasi>
+  <foaf:jurusan>181</foaf:jurusan>
+       <foaf:name>Bogor Agricultural University</foaf:name>
+      <foaf:homepage rdf:resource="http://www.ipb.ac.id"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q2308020">
+  <foaf:akreditasi>A</foaf:akreditasi>
+  <foaf:jurusan>39</foaf:jurusan>
+       <foaf:name>Atma Jaya Catholic University of Indonesia</foaf:name>
+      <foaf:homepage rdf:resource="https://www.atmajaya.ac.id/"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q3267815">
+  <foaf:akreditasi>A</foaf:akreditasi>
+  <foaf:jurusan>49</foaf:jurusan>
+       <foaf:name>Bina Nusantara University</foaf:name>
+      <foaf:homepage rdf:resource="http://www.binus.ac.id/"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q7454049">
+  <foaf:akreditasi>B</foaf:akreditasi>
+  <foaf:jurusan>28</foaf:jurusan>
+       <foaf:name>Indonesian Computer University</foaf:name>
+      <foaf:homepage rdf:resource="http://www.unikom.ac.id/"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q7553485">
+  <foaf:akreditasi>A</foaf:akreditasi>
+  <foaf:jurusan>29</foaf:jurusan>
+       <foaf:name>Soegijapranata Catholic University</foaf:name>
+      <foaf:homepage rdf:resource="http://www.unika.ac.id"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q28949971">
+  <foaf:akreditasi>B</foaf:akreditasi>
+  <foaf:jurusan>19</foaf:jurusan>
+        <foaf:name>Hindu Indonesia University</foaf:name>
+      <foaf:homepage rdf:resource="https://www.unhi.ac.id/"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+<foaf:Univ rdf:about="http://www.wikidata.org/entity/Q3551553">
+<foaf:jurusan>55</foaf:jurusan>
+       <foaf:name>State University of Papua</foaf:name>
+      <foaf:homepage rdf:resource="http://unipa.ac.id/"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q7686915">
+ 
+ >
+  <foaf:akreditasi>A</foaf:akreditasi>
+  <foaf:jurusan>29</foaf:jurusan>
+       <foaf:name>Tarumanagara University</foaf:name>
+      <foaf:homepage rdf:resource="http://www.untar.ac.id"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q1336952">
+  <foaf:akreditasi>A</foaf:akreditasi>
+  <foaf:jurusan>177</foaf:jurusan>
+       <foaf:name>Brawijaya University</foaf:name>
+      <foaf:homepage rdf:resource="http://www.ub.ac.id"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q1195648">
+  <foaf:akreditasi>B</foaf:akreditasi>
+  <foaf:jurusan>32</foaf:jurusan>
+       <foaf:name>Universitas Muhammadiyah Gresik</foaf:name>
+      <foaf:homepage rdf:resource="http://www.umg.ac.id"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q5520863">
+  <foaf:akreditasi>A</foaf:akreditasi>
+  <foaf:jurusan>67</foaf:jurusan>
+       <foaf:name>Ganesha University of Education</foaf:name>
+      <foaf:homepage rdf:resource="http://www.undiksha.ac.id"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q7894416">
+  <foaf:akreditasi>B</foaf:akreditasi>
+  <foaf:jurusan>14</foaf:jurusan>
+       <foaf:name>Universitas Methodist Indonesia</foaf:name>
+      <foaf:homepage rdf:resource="http://www.umi-mdn.ac.id/"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q7896071">
+  <foaf:akreditasi>B</foaf:akreditasi>
+  <foaf:jurusan>86</foaf:jurusan>
+       <foaf:name>University of Pattimura</foaf:name>
+      <foaf:homepage rdf:resource="http://www.unpatti.ac.id"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q7896072">
+  <foaf:akreditasi>A</foaf:akreditasi>
+  <foaf:jurusan>32</foaf:jurusan>
+       <foaf:name>University of Pembangunan Nasional Veteran</foaf:name>
+      <foaf:homepage rdf:resource="http://www.upnjatim.ac.id"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q7896055">
+  <foaf:akreditasi>B</foaf:akreditasi>
+  <foaf:jurusan>56</foaf:jurusan>
+       <foaf:name>University of Palangka Raya</foaf:name>
+      <foaf:homepage rdf:resource="http://www.upr.ac.id/"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q23807190">
+  <foaf:akreditasi>B</foaf:akreditasi>
+  <foaf:jurusan>16</foaf:jurusan>
+        <foaf:name>University of Fajar</foaf:name>
+      <foaf:homepage rdf:resource="http://www.unifa.ac.id/"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q5358247">
+  <foaf:akreditasi>A</foaf:akreditasi>
+  <foaf:jurusan>34</foaf:jurusan>
+       <foaf:name>Electronic Engineering Polytechnic Institute of Surabaya</foaf:name>
+      <foaf:homepage rdf:resource="http://www.eepis-its.edu/"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q1579397">
+  <foaf:akreditasi>A</foaf:akreditasi>
+  <foaf:jurusan>136</foaf:jurusan>
+       <foaf:name>Institut Teknologi Bandung</foaf:name>
+      <foaf:homepage rdf:resource="http://www.itb.ac.id"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q3958218">
+  <foaf:akreditasi>A</foaf:akreditasi>
+  <foaf:jurusan>135</foaf:jurusan>
+       <foaf:name>Syiah Kuala University</foaf:name>
+      <foaf:homepage rdf:resource="http://www.unsyiah.ac.id/"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q6818526">
+  <foaf:akreditasi>A</foaf:akreditasi>
+  <foaf:jurusan>24</foaf:jurusan>
+       <foaf:name>Mercu Buana University</foaf:name>
+      <foaf:homepage rdf:resource="http://www.mercubuana.ac.id/"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q4259201">
+  <foaf:akreditasi>A</foaf:akreditasi>
+  <foaf:jurusan>65</foaf:jurusan>
+       <foaf:name>Muhammadiyah University of Surakarta</foaf:name>
+      <foaf:homepage rdf:resource="http://www.ums.ac.id"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q19744796">
+  <foaf:akreditasi>B</foaf:akreditasi>
+  <foaf:jurusan>13</foaf:jurusan>
+        <foaf:name>De La Salle Catholic University</foaf:name>
+      <foaf:homepage rdf:resource="http://www.unikadelasalle.ac.id/"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q19744804"> e>
+  <foaf:akreditasi>B</foaf:akreditasi>
+  <foaf:jurusan>19</foaf:jurusan>
+        <foaf:name>Langlangbuana University</foaf:name>
+      <foaf:homepage rdf:resource="http://www.unla.ac.id/"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q7178629">
+  <foaf:akreditasi>A</foaf:akreditasi>
+  <foaf:jurusan>22</foaf:jurusan>
+       <foaf:name>Petra Christian University</foaf:name>
+      <foaf:homepage rdf:resource="http://www.petra.ac.id"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q6127803">
+ <foaf:akreditasi>B</foaf:akreditasi>
+  <foaf:jurusan>90</foaf:jurusan>
+       <foaf:name>Jambi University</foaf:name>
+      <foaf:homepage rdf:resource="http://www.unja.ac.id/"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q16948249"> >
+  <foaf:akreditasi>B</foaf:akreditasi>
+  <foaf:jurusan>14</foaf:jurusan>
+        <foaf:name>Wijaya Putra University</foaf:name>
+      <foaf:homepage rdf:resource="http://uwp.ac.id/"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q3181122">
+  <foaf:akreditasi>A</foaf:akreditasi>
+  <foaf:jurusan>203</foaf:jurusan>
+       <foaf:name>Padjadjaran University</foaf:name>
+      <foaf:homepage rdf:resource="http://www.unpad.ac.id/"/>
+</foaf:Univ>
+
+    </foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q7603606">
+  <foaf:akreditasi>A</foaf:akreditasi>
+  <foaf:jurusan>97</foaf:jurusan>
+       <foaf:name>State University of Gorontalo</foaf:name>
+      <foaf:homepage rdf:resource="http://www.ung.ac.id/"/>
+</foaf:Univ>
+    </foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q7636602">
+  <foaf:akreditasi>A</foaf:akreditasi>
+  <foaf:jurusan>60</foaf:jurusan>
+       <foaf:name>Sultan Ageng Tirtayasa University</foaf:name>
+      <foaf:homepage rdf:resource="http://untirta.ac.id"/>
+</foaf:Univ>
+</foaf:consists>
+<!-- ========================================================================= -->
+<foaf:consists>
+  <foaf:Univ rdf:about="http://www.wikidata.org/entity/Q18941968">
+  <foaf:akreditasi>A</foaf:akreditasi>
+  <foaf:jurusan>108</foaf:jurusan>
+        <foaf:name>State University of Surabaya</foaf:name>
+      <foaf:homepage rdf:resource="http://www.unesa.ac.id/"/>
+</foaf:Univ>
+</foaf:consists>
+  </foaf:Universities>
+
+</rdf:RDF>
