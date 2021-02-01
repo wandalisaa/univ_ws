@@ -205,6 +205,8 @@ foreach ($result as $key2):
 $dataset = \EasyRdf\Graph::newAndLoad('http://localhost/univ_ws/univ.rdf');
 $docs = $dataset->primaryTopic();
 $link = strval( $data->link ) ;
+
+
 $a=array();
 
 
@@ -452,31 +454,13 @@ $detail = [
 
 var map = L.map('mapid').setView([<?php echo $array6["lat"]; ?>, <?php echo $array6["long"]; ?>], 5);
 
-
-
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
 <?php 
 foreach ($result as $key2):
-$array2 = array('lokasi'=>str_replace('POINT', '', ucwords($key2->lokasi)));
-$array3 = array('lokasi' =>str_replace(')', '', ucwords($array2["lokasi"])));
-$array4 = array('lokasi' =>str_replace('(', '', ucwords($array3["lokasi"])));
-$array5 = array('lokasi' =>str_replace(' -', ' ', ucwords($array4["lokasi"])));
-$pattern = '/(\d+) (\d+).(\d+)/i'; 
-$replacement = '$1 '; 
-$pattern1 = '/(\d+).(\d+) /i';
-$replacement1 = '';
-
-// print output of function 
-$array6 = array(
-'long' => preg_replace($pattern, $replacement, $array5["lokasi"]),
-'lat' => preg_replace($pattern1, $replacement1, $array4["lokasi"])
-);
-
 ?>
-
 var marker = L.marker([<?php echo $array6["lat"]; ?>, <?php echo $array6["long"]; ?>]).addTo(map);
 <?php if (isset($key2->namaUniv)) { ?>
 	marker.bindPopup('<b><?php echo $key2->namaUniv; ?></b><br>').openPopup();
